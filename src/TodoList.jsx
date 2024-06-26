@@ -1,19 +1,11 @@
 import TodoItem from "./TodoItem";
 
-function TodoList({ title }) {
-  const todoItems = [
-    "Item 1",
-    "Item 2",
-    "Item 3",
-    "Item 4",
-    "Item 5"
-  ];
-
+function TodoList({ title, todoItems }) {
   return (
     <section>
       <h2>{title}</h2>
       <ul>
-        {todoItems.map((item, i) => <TodoItem key={i} title={item} />)}
+        {todoItems && todoItems.map((item, i) => <TodoItem key={i} todoItem={item} />)}
       </ul>
     </section>
   )
